@@ -1,0 +1,110 @@
+\# Release Lines
+
+
+
+\## Active Branches
+
+
+
+| Release Line | Branch | Status | Notes |
+
+|---|---|---|---|
+
+| Current Development | `main` | Active | New features merge here |
+
+| Release 1.4 | `release/1.4` | Active | Hotfixes allowed |
+
+| Release 1.3 | `release/1.3` | Maintenance | Critical fixes only |
+
+
+
+\## Release Rules
+
+
+
+\- New features are not allowed directly on release branches.
+
+\- Hotfixes must target the affected release branch.
+
+\- Fixes made on release branches must be merged back to `main`.
+
+\- Maintenance release branches only accept critical fixes.
+
+
+
+\## Freeze Window
+
+
+
+\- During freeze, only approved hotfixes can merge into release branches.
+
+\- Feature merges to `main` can continue unless release manager blocks them.
+
+
+
+\## Feature Scenario
+
+
+
+Request: `Create branch plan for feature payments-ui`
+
+
+
+Expected plan:
+
+
+
+\- Source branch: `main`
+
+\- New branch: `feature/payments-ui`
+
+\- Target PR: `main`
+
+\- Merge type: `squash`
+
+\- Backport: `not required`
+
+
+
+\## Hotfix Scenario
+
+
+
+Request: `Create branch plan for hotfix txn-123 for release 1.4`
+
+
+
+Expected plan:
+
+
+
+\- Source branch: `release/1.4`
+
+\- New branch: `hotfix/txn-123`
+
+\- Target PR: `release/1.4`
+
+\- Merge type: `merge commit`
+
+\- Backport: `required to main`
+
+
+
+\## Agent Instructions
+
+
+
+When asked about a release or hotfix, always check:
+
+
+
+\- affected release line
+
+\- branch status
+
+\- allowed change type
+
+\- target branch
+
+\- backport requirement
+
